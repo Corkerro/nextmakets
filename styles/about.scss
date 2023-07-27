@@ -1,0 +1,61 @@
+.about {
+  // .about__container
+  @include adaptiveValue('margin-top', 100, 40);
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    @media (max-width: em(640)) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  // .about__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & p {
+      color: $textLight;
+    }
+  }
+
+  // .about__numbers
+
+  &__numbers {
+    // .about__numbers_number
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    @media (max-width: em(500)) {
+      grid-column-gap: 5px;
+    }
+    & p {
+      color: $textLight;
+      @include adaptiveValue('font-size', 16, 12);
+    }
+    & span {
+      color: $mainColor;
+      @include adaptiveValue('font-size', 64, 30, 640, 32, 1);
+    }
+    &_number {
+      color: $mainColor;
+      padding-top: 40px;
+      border-top: 1px solid $textLight;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
+.subtitle {
+}
+.text-2 {
+}
+.number {
+}

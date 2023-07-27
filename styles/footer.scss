@@ -1,0 +1,112 @@
+//====================================================================================================
+.footer {
+  margin-top: rem(40);
+  position: relative;
+  &__bg {
+    width: 100%;
+    @media (max-width: em(640)) {
+      scale: 2;
+      top: 100px;
+    }
+    opacity: 0.02;
+    top: -300px;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    animation: newroll 10s linear infinite;
+  }
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__marquee
+
+  &__marquee {
+    margin-top: rem(-90);
+    position: absolute;
+    right: 0;
+    width: 100%;
+    overflow-x: hidden;
+    &_wrapper {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      // transform: translateX(calc((-810px - 20px) * 2));
+      // transform: translateX(0);
+      animation: marqueeFooter 20s linear infinite;
+    }
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: 810px !important;
+    }
+  }
+
+  // .footer__content
+
+  &__content {
+    padding: rem(20) 0 rem(30);
+    border-top: 1px solid $bgLight;
+    margin-top: rem(90);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px 5px;
+    flex-wrap: wrap;
+    & ul {
+      display: flex;
+      @include adaptiveValue('gap', 20, 10);
+      align-items: center;
+      & li {
+        & a {
+          position: relative;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px; /* Высота линии */
+            background-color: $textDark; /* Цвет подчеркивания при исчезании линии*/
+            transition:
+              width 0.3s,
+              background-color 0.3s ease; /* Время эффекта */
+          }
+          &:hover::after {
+            width: 100%;
+            left: 0;
+            background-color: $textDark;
+          }
+        }
+      }
+    }
+  }
+}
+.stroke-text {
+}
+.li {
+}
+
+@keyframes marqueeFooter {
+  from {
+    transform: translateX(calc((-645px - 20px) * 2));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes newroll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+//====================================================================================================

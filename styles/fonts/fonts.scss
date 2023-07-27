@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Vasek;
+  font-display: swap;
+  src: url('../../fonts/Vasek-Italic.woff2') format('woff2'),
+    url('../../fonts/Vasek-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Winston;
+  font-display: swap;
+  src: url('../../fonts/Winston-Bold.woff2') format('woff2'),
+    url('../../fonts/Winston-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Winston;
+  font-display: swap;
+  src: url('../../fonts/Winston-Medium.woff2') format('woff2'),
+    url('../../fonts/Winston-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Winston;
+  font-display: swap;
+  src: url('../../fonts/Winston-Regular.woff2') format('woff2'),
+    url('../../fonts/Winston-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Winston;
+  font-display: swap;
+  src: url('../../fonts/Winston-SemiBold.woff2') format('woff2'),
+    url('../../fonts/Winston-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}

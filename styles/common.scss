@@ -1,0 +1,124 @@
+// Заголовки, общие БЄМ блоки и проче...
+h1 {
+  @include adaptiveValue('font-size', 98, 28);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  &.italic {
+    font-family: Vasek;
+    @include adaptiveValue('font-size', 163, 70);
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+h2 {
+  @include adaptiveValue('font-size', 40, 16);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 44px */
+}
+h3 {
+  font-size: rem(20);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 24px */
+}
+.subtitle {
+  @include adaptiveValue('font-size', 25, 16);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 30px */
+  &-italic {
+    font-family: Vasek;
+    font-size: rem(46);
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+  }
+}
+.number {
+  font-family: Vasek;
+  @include adaptiveValue('font-size', 64, 30);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 110%; /* 70.4px */
+}
+.stroke-text {
+  @include adaptiveValue('font-size', 40, 26);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.text {
+  &-1 {
+    @include adaptiveValue('font-size', 16, 14);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137%; /* 21.92px */
+  }
+  &-2 {
+    @include adaptiveValue('font-size', 18, 14);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+  }
+  &-3 {
+    @include adaptiveValue('font-size', 16, 14);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 137%; /* 21.92px */
+  }
+  &-4 {
+    font-size: rem(12);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 14.4px */
+  }
+}
+.button-title {
+  font-size: rem(16);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 137%; /* 21.92px */
+}
+.italic {
+  font-family: Vasek;
+  font-size: rem(34);
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+.form-text {
+  font-size: rem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 137%; /* 21.92px */
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 64px;
+  text-align: center;
+  border-radius: 40px;
+  border: 1px solid var(--fill-light, #827089);
+  background: $bgBright;
+  transition:
+    background 0.3s ease,
+    opacity 0.3s ease;
+  &:not(.disabled) {
+    &:hover {
+      background: $white;
+    }
+  }
+  &.disabled {
+    opacity: 0.6;
+  }
+  @media (max-width: em(500)) {
+    margin: 0 auto;
+  }
+}
