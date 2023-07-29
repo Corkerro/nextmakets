@@ -124,8 +124,9 @@
       position: relative;
       overflow: hidden;
       max-height: 0;
+      will-change: max-height;
       &.open {
-        max-height: 500px;
+        max-height: 700px;
       }
       &-wrapper {
         display: grid;
