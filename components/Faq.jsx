@@ -67,8 +67,8 @@ export default function Faq() {
               <Collapse isOpened={isOpen1}>
                 <div className="faq__spollers_body text-3">
                   Да! При использовании наших ресурсов оставьте ссылку на нашу группу в Telegram:
-                  <button onClick={handleCopyClick}>"https://t.me/figmamakets/7"</button>. Мы ценим
-                  признание и поддержку нашей работы.
+                  <button onClick={handleCopyClick}>&#34;https://t.me/figmamakets/7&#34;</button>.
+                  Мы ценим признание и поддержку нашей работы.
                 </div>
               </Collapse>
             </div>
@@ -103,9 +103,9 @@ export default function Faq() {
               </button>
               <Collapse isOpened={isOpen3}>
                 <div className="faq__spollers_body text-3">
-                  Конечно, после того, как вы скопируете макет в свои "Drafts" (черновики), у вас
-                  будет полная свобода вносить изменения в макет по своему усмотрению. Вы можете
-                  настраивать его, изменять элементы и приспосабливать под свои потребности.
+                  Конечно, после того, как вы скопируете макет в свои &#34;Drafts&#34; (черновики),
+                  у вас будет полная свобода вносить изменения в макет по своему усмотрению. Вы
+                  можете настраивать его, изменять элементы и приспосабливать под свои потребности.
                 </div>
               </Collapse>
             </div>
@@ -122,8 +122,9 @@ export default function Faq() {
               <Collapse isOpened={isOpen4}>
                 <div className="faq__spollers_body text-3">
                   Чтобы скопировать макет себе, просто откройте файл в Figma и выберите опцию
-                  "Duplicate to your Drafts" (Дублировать в черновики). Таким образом, макет будет
-                  скопирован в вашу личную папку "Drafts" для дальнейшей работы и редактирования.
+                  &#34;Duplicate to your Drafts&#34; (Дублировать в черновики). Таким образом, макет
+                  будет скопирован в вашу личную папку &#34;Drafts&#34; для дальнейшей работы и
+                  редактирования.
                 </div>
               </Collapse>
             </div>
