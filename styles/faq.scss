@@ -39,7 +39,7 @@
       &::after {
         content: '';
         width: 1px;
-        height: 1%;
+        height: 0%;
         background: $textLight;
         position: absolute;
         top: 0;
@@ -93,9 +93,7 @@
           display: inline-block;
           border-radius: 50%;
           border: 1px solid $textLight;
-          transition:
-            border 0.3s ease,
-            scale 0.3s ease;
+          transition: border 0.3s ease, scale 0.3s ease;
           position: relative;
           &::before,
           &::after {
@@ -119,8 +117,9 @@
     // .faq__spollers_body
 
     &_body {
-      margin-top: rem(10);
+      padding-top: rem(10);
       color: $textLight;
+
       @media (min-width: em(640.1)) {
         padding-right: 40px;
       }
@@ -159,4 +158,8 @@
     left: 10px;
     text-align: center;
   }
+}
+
+.faq__spollers_item > .ReactCollapse--collapse {
+  transition: height 300ms;
 }

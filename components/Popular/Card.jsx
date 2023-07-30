@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
-
+import React, { useState } from 'react';
+import { Collapse } from 'react-collapse';
 const formatDate = (dateString) => {
   const options = {
     day: 'numeric',
@@ -49,65 +48,71 @@ export default function Card({
             <span></span>
           </h3>
         </button>
-        <div className={`popular__spollers_body ${isOpen ? 'open' : ''}`}>
-          <div className="popular__spollers_body-wrapper">
-            <img
-              data-da=".popular__spollers_body-block-2, 500, 1"
-              src={`${image}`}
-              alt=""
-              className="popular__spollers_body-img"
-              style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
-            />
-            <div className="popular__spollers_body-block popular__spollers_body-block-2">
-              <p className="text-1 popular__spollers_body-top">{formatDate(date)}</p>
-              <ul className="popular__spollers_body-info">
-                <li>
-                  Уровень сложности: <a href="#">{level}</a>
-                </li>
-                <li>
-                  Тип:{' '}
-                  {JSON.parse(type).map((item, index) => (
-                    <React.Fragment key={index}>
-                      {index > 0 && ', '}
-                      <a href={`#${item}`}>{item}</a>
-                    </React.Fragment>
-                  ))}
-                </li>
-                <li>
-                  Адаптивность: <a href="#">{adaptive}</a>
-                </li>
-                <li>
-                  Язык:{' '}
-                  {JSON.parse(language).map((item, index) => (
-                    <React.Fragment key={index}>
-                      {index > 0 && ', '}
-                      <a href={`#${item}`}>{item}</a>
-                    </React.Fragment>
-                  ))}
-                </li>
-                <li>
-                  Цветовая тема:{' '}
-                  {JSON.parse(color).map((item, index) => (
-                    <React.Fragment key={index}>
-                      {index > 0 && ', '}
-                      <a href={`#${item}`}>{item}</a>
-                    </React.Fragment>
-                  ))}
-                </li>
-                <li>
-                  Цена макета: <a href="#">~{price}₽</a>
-                </li>
-              </ul>
-              <a
-                href={`/maket/${id}`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className="popular__spollers_body-button button">
-                Открыть
-              </a>
+        <Collapse isOpened={isOpen}>
+          <div className={`popular__spollers_body`}>
+            <div className="popular__spollers_body-wrapper">
+              <img
+                data-da=".popular__spollers_body-block-2, 500, 1"
+                src={`${image}`}
+                alt=""
+                className="popular__spollers_body-img"
+                style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
+              />
+              <div className="popular__spollers_body-block popular__spollers_body-block-2">
+                <p className="text-1 popular__spollers_body-top">{formatDate(date)}</p>
+                <ul className="popular__spollers_body-info">
+                  <li>
+                    Уровень сложности: <a href="#">{level}</a>
+                  </li>
+                  <li>
+                    Тип:{' '}
+                    {JSON.parse(type).map((item, index) => (
+                      <React.Fragment key={index}>
+                        {index > 0 && ', '}
+                        <a href={`#${item}`}>{item}</a>
+                      </React.Fragment>
+                    ))}
+                  </li>
+                  <li>
+                    Адаптивность: <a href="#">{adaptive}</a>
+                  </li>
+                  <li>
+                    Язык:{' '}
+                    {JSON.parse(language).map((item, index) => (
+                      <React.Fragment key={index}>
+                        {index > 0 && ', '}
+                        <a href={`#${item}`}>{item}</a>
+                      </React.Fragment>
+                    ))}
+                  </li>
+                  <li>
+                    Цветовая тема:{' '}
+                    {JSON.parse(color).map((item, index) => (
+                      <React.Fragment key={index}>
+                        {index > 0 && ', '}
+                        <a href={`#${item}`}>{item}</a>
+                      </React.Fragment>
+                    ))}
+                  </li>
+                  <li>
+                    Цена макета: <a href="#">~{price}₽</a>
+                  </li>
+                </ul>
+                <a
+                  href={`/maket/${id}`}
+                  onMouseEnter={() => {
+                    if (window.innerWidth > 640) {
+                      setIsHovered(true);
+                    }
+                  }}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className="popular__spollers_body-button button">
+                  Открыть
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </Collapse>
       </div>
     </div>
   );

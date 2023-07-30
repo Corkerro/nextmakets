@@ -34,7 +34,7 @@ export default function News() {
     };
   }, []);
   return (
-    <div className="news">
+    <section className="news">
       <div className="news__container">
         <h4 className="subtitle">Новости</h4>
         <div className="news__content">
@@ -89,6 +89,6 @@ export default function News() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

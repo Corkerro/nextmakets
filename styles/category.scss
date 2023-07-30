@@ -46,13 +46,13 @@
   &__slide {
     border-radius: 3px !important;
     overflow: hidden;
-    transition-delay: 0.4s;
+    cursor: pointer;
     & img {
       width: 365px;
       height: 365px;
     }
     transition: all 0.3s ease !important;
-    transition-delay: 0.4s !important;
+
     @media (max-width: em(1550)) {
       width: 290px;
       height: 290px;
@@ -180,7 +180,7 @@
   scale: 1;
   border-radius: 3px;
   top: 0;
-
+  transition-delay: 0.4s !important;
   @media (min-width: em(1550.1)) {
     scale: 1.3;
   }

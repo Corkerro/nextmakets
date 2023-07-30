@@ -120,14 +120,8 @@
 
     &_body {
       width: 100%;
-      transition: max-height 0.7s ease;
       position: relative;
       overflow: hidden;
-      max-height: 0;
-      will-change: max-height;
-      &.open {
-        max-height: 700px;
-      }
       &-wrapper {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -223,4 +217,8 @@
       }
     }
   }
+}
+
+.popular__spollers_item > .ReactCollapse--collapse {
+  transition: height 700ms;
 }

@@ -1,5 +1,4 @@
-import { CardService } from '@/services/card.service';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from './Card';
 
 export default function Popular({ cards }) {
@@ -12,10 +11,10 @@ export default function Popular({ cards }) {
     setSelected(i);
   };
   return (
-    <div class="popular">
-      <div class="popular__container">
-        <h4 class="subtitle">Самое популярное</h4>
-        <div data-spollers data-one-spoller class="popular__spollers">
+    <section className="popular">
+      <div className="popular__container">
+        <h4 className="subtitle">Самое популярное</h4>
+        <div data-spollers data-one-spoller className="popular__spollers">
           {cards.data.map((item, i) => (
             <Card
               key={item.id}
@@ -41,6 +40,6 @@ export default function Popular({ cards }) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

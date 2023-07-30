@@ -1,8 +1,6 @@
 .news {
   // .news__container
   @include adaptiveValue('margin-top', 100, 40);
-
-  padding-bottom: rem(10000);
   &__container {
     display: grid;
     grid-template-columns: 1fr 3fr;

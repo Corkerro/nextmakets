@@ -83,113 +83,113 @@ export default function Main() {
     }
   }, [popupOpen]);
   return (
-    <div class="main">
+    <section className="main">
       {popupOpen && <PopupVideo videoId={videoId} onClose={closePopup} />}
-      <div class="main__container">
-        <div class="main__top">
-          <div class="main__top_top">
+      <div className="main__container">
+        <div className="main__top">
+          <div className="main__top_top">
             <h1>
               СБОРНИК <span>ЛУЧШИХ</span>
             </h1>
             {isWindowSize1390 ? button : ''}
           </div>
-          <div class="main__top_down">
+          <div className="main__top_down">
             <h1>МАКЕТОВ FIGMA</h1>
 
             {isWindowSize1390 ? '' : button}
             {isWindowSize1390 ? paragraph : ''}
           </div>
-          <div class="main__text">{isWindowSize1390 ? '' : paragraph}</div>
+          <div className="main__text">{isWindowSize1390 ? '' : paragraph}</div>
         </div>
-        <div class="main__tags">
+        <div className="main__tags">
           <ul>
             <li>
-              <a href="#" class="subtitle-italic">
+              <a href="#" className="subtitle-italic">
                 # лендинг
               </a>
             </li>
             <li>
-              <a href="#" class="subtitle-italic">
+              <a href="#" className="subtitle-italic">
                 # интернет-магазин
               </a>
             </li>
             <li>
-              <a href="#" class="subtitle-italic">
+              <a href="#" className="subtitle-italic">
                 # корпоративный
               </a>
             </li>
           </ul>
-          <div class="main__tags_line">
+          <div className="main__tags_line">
             <div></div>
             <img src="/img/main/shine_2.svg" alt="" />
           </div>
         </div>
-        <div class="main__picture">
-          <div class="main__picture_wrapper">
+        <div className="main__picture">
+          <div className="main__picture_wrapper">
             <img
               ref={imgRef}
               data-paralax
               src="/img/main/mentis abstract.jpg"
               alt=""
-              class="main__picture_img"
+              className="main__picture_img"
             />
             {isWindowSize600 ? buttonTelegram : ''}
           </div>
           {isWindowSize600 ? '' : buttonTelegram}
         </div>
-        <div class="main__marquee">
-          <div class="main__marquee_wrapper">
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+        <div className="main__marquee">
+          <div className="main__marquee_wrapper">
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
-            <div class="main__marquee_item">
-              <span class="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
+            <div className="main__marquee_item">
+              <span className="stroke-text">ИЗБРАННАЯ коллекцИя макетов</span>
               <img src="/img/main/portal.svg" alt="" />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
