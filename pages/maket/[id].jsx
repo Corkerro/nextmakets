@@ -25,16 +25,6 @@ export default function MaketPage({ card, similar }) {
           description={data.description}
           link={data.link}
         />
-        <About
-          features={features}
-          likes={data.likes}
-          id={data.id}
-          images={JSON.parse(data.images)}
-          link={data.link}
-          addLike={addLike}
-        />
-        <Similar similar={similar} />
-        <Contacts />
       </main>
       <Footer />
     </div>
