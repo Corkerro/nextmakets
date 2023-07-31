@@ -1,0 +1,77 @@
+.cmain {
+  background: var(--fill-purpule, #dfdff1);
+  @include adaptiveValue('padding-top', 110, 80);
+  &__container {
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    & h1 {
+      @include adaptiveValue('font-size', 50, 29);
+    }
+    & img {
+      max-width: rem(700);
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (max-width: em(1200)) {
+      width: 100%;
+      align-items: center;
+    }
+    & img {
+      width: 100%;
+      max-width: rem(700);
+    }
+    & ul {
+      display: flex;
+      gap: 4px 24px;
+      flex-wrap: wrap;
+      @media (max-width: em(1200)) {
+        justify-content: center;
+      }
+      & li {
+        padding: 4px 12px;
+        border-radius: 30px;
+        border: 1px solid var(--fill-purpule, #dfdff1);
+        background: var(--fill-purpule, #dfdff1);
+        box-shadow: 4px 4px 8px 0px rgba(189, 188, 237, 0.25),
+          -4px -4px 8px 0px rgba(255, 255, 255, 0.4);
+        @include adaptiveValue('font-size', 40, 28);
+      }
+    }
+    & p {
+      @media (max-width: em(1200)) {
+        text-align: center;
+      }
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    @media (max-width: em(550)) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: rem(300);
+      & a {
+        width: 100%;
+      }
+    }
+    &_button {
+      background: transparent;
+      white-space: nowrap;
+    }
+  }
+  &__marquee {
+    margin-top: rem(50);
+  }
+}

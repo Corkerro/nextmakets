@@ -3,13 +3,13 @@
   top: 0;
   padding-top: 20px;
   padding-bottom: 4px;
-  transition: padding-top 0.3s ease;
+  transition: padding-top 0.3s ease, background 0.3s ease;
   position: fixed;
   width: 100%;
   z-index: 5;
-  background: rgba(249, 247, 248, 0.7);
   backdrop-filter: blur(20px);
   &._header-scroll {
+    background: rgba(249, 247, 248, 0.7);
     padding-top: 8px;
     & .header {
       &__logo {

@@ -55,7 +55,7 @@ export default function Header() {
   return (
     <header data-scroll className={scrolled ? 'header _header-scroll' : 'header'}>
       <div className="header__container">
-        <a href="" className="header__logo">
+        <a href={`/`} className="header__logo">
           <Image src="/img/logo.svg" alt="" width={26} height={40} />
         </a>
         <div className="header__menu menu">
