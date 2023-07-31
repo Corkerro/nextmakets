@@ -33,6 +33,7 @@ export default function MaketPage({ card, similar }) {
           link={data.link}
           addLike={addLike}
         />
+        <Contacts />
       </main>
       <Footer />
     </div>
