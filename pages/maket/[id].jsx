@@ -1,15 +1,15 @@
-import About from '@/components/CardPage/About';
 import Main from '@/components/CardPage/Main';
-import Similar from '@/components/CardPage/Similar';
-import Contacts from '@/components/Contacts';
+// import About from '@/components/CardPage/About';
+// import Similar from '@/components/CardPage/Similar';
+// import Contacts from '@/components/Contacts';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { CardService } from '@/services/card.service';
 
 export default function MaketPage({ card, similar }) {
   const data = card.data[0];
-  const features = data.features.split(', ');
-  const addLike = (id) => CardService.incrementLike(id);
+  // const features = data.features.split(', ');
+  // const addLike = (id) => CardService.incrementLike(id);
   return (
     <div className="wrapper">
       <Header />
@@ -24,7 +24,7 @@ export default function MaketPage({ card, similar }) {
           description={data.description}
           link={data.link}
         />
-        <About
+        {/* <About
           features={features}
           likes={data.likes}
           id={data.id}
@@ -33,7 +33,7 @@ export default function MaketPage({ card, similar }) {
           addLike={addLike}
         />
         <Similar similar={similar} />
-        <Contacts />
+        <Contacts /> */}
       </main>
       <Footer />
     </div>
