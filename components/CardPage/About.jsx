@@ -102,20 +102,14 @@ export default function About({ features, likes, id, images, link, addLike }) {
       }}
       className="cabout__slider">
       {images.slice(1).map((item, index) => (
-        <React.Fragment key={index}>
-          {index > 0}
-          <SwiperSlide className="cabout__slide">
-            <img src={item} alt="" />
-          </SwiperSlide>
-        </React.Fragment>
+        <SwiperSlide key={index} className="cabout__slide">
+          <img src={item} alt="" />
+        </SwiperSlide>
       ))}
       {images.slice(1).map((item, index) => (
-        <React.Fragment key={index}>
-          {index > 0}
-          <SwiperSlide className="cabout__slide">
-            <img src={item} alt="" />
-          </SwiperSlide>
-        </React.Fragment>
+        <SwiperSlide key={index} className="cabout__slide">
+          <img src={item} alt="" />
+        </SwiperSlide>
       ))}
     </Swiper>
   );

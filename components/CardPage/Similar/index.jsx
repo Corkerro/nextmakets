@@ -1,4 +1,3 @@
-import { CardService } from '@/services/card.service';
 import React from 'react';
 import Card from './Card';
 
