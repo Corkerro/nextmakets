@@ -8,20 +8,6 @@ export default function MaketPage({ card }) {
   return (
     <div className="wrapper">
       <Header />
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
-      {data.title}
       <Footer />
     </div>
   );
