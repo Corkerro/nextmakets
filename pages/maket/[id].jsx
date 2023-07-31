@@ -2,12 +2,26 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { CardService } from '@/services/card.service';
 
-export default function MaketPage({ card, similar }) {
+export default function MaketPage({ card }) {
   const data = card.data[0];
 
   return (
     <div className="wrapper">
       <Header />
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
+      {data.title}
       <Footer />
     </div>
   );
@@ -25,13 +39,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const card = await CardService.getById(String(params?.id));
-  const similar = await CardService.getRandom(
-    card.data[0].type,
-    card.data[0].color,
-    card.data[0].level,
-  );
   return {
-    props: { card, similar },
+    props: { card },
     revalidate: 60,
   };
 };
