@@ -29,8 +29,10 @@ export const CardService = {
     return data;
   },
 
-  async getRandom(type, option) {
-    const { data } = await axios.get(`/makets/random-for-option?type=${type}&option=${option}`);
+  async getRandom(type, color, level) {
+    const { data } = await axios.get(
+      `/makets/random-for-option?type=${type}&color=${color}&level=${level}`,
+    );
     return data;
   },
 
