@@ -105,7 +105,7 @@ export default function filter({ cards, count, options }) {
   );
 }
 export const getStaticProps = async () => {
-  const cards = await CardService.getCardByOption('?page=1&limit=3');
+  const cards = await CardService.getCardByOption('?page=1&limit=9');
   const count = await CardService.getCount('');
   const options = await CardService.getOptions('');
   return {
