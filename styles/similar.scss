@@ -1,12 +1,18 @@
 .similar {
   @include adaptiveValue('padding-top', 110, 80);
   &__content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    @media (max-width: em(830)) {
-      justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    @media (max-width: em(1560)) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2fr;
+    }
+    @media (max-width: em(780)) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 4fr;
     }
   }
   &__top {
@@ -26,6 +32,7 @@
   &__card {
     width: 365px;
     height: 365px;
+    margin: 0 auto;
     @media (max-width: em(400)) {
       width: 100%;
       height: auto;

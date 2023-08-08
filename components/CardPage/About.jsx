@@ -34,6 +34,7 @@ export default function About({ features, likes, id, images, link, addLike }) {
       }
     } else {
       // Если id уже присутствует в массиве, не удаляем его
+
       if (likedMakets.includes(id)) {
         return;
       }
@@ -55,6 +56,7 @@ export default function About({ features, likes, id, images, link, addLike }) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   const swiperDiv = (
     <Swiper
       modules={[Navigation, Autoplay]} // Подключаем модули прямо в компонент Swiper
@@ -138,7 +140,7 @@ export default function About({ features, likes, id, images, link, addLike }) {
                 <img src="/img/cabout/like.svg" alt="" className={`licked ${liked ? '' : 'dn'}`} />{' '}
                 <img src="/img/cabout/nolike.svg" alt="" className="unlicked" />{' '}
               </div>
-              {liked ? likes : likes - 1}
+              {liked ? myLikes : myLikes - 1}
             </div>
             <a href={link} className="button">
               ОТКРЫТЬ МАКЕТ

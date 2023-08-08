@@ -9,7 +9,7 @@ export default function Similar({ similar }) {
       <div className="similar__container">
         <div className="similar__top">
           <h4 className="subtitle">Похожие макеты</h4>
-          <a href="">Посмотреть ещё</a>
+          <a href="/filter">Посмотреть ещё</a>
         </div>
 
         <div className="similar__content">
