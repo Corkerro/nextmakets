@@ -1,0 +1,210 @@
+.filtertop {
+  margin-top: rem(100);
+
+  position: relative;
+  width: 100%;
+  &__container {
+    padding-top: 20px;
+    border-top: 1px solid #827089;
+    position: relative;
+    & h1 {
+      color: var(--text-black, #240532);
+      font-family: Vasek;
+      @include adaptiveValue('font-size', 163, 70);
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+  &__text {
+    max-width: rem(610);
+    margin: 0 auto;
+    @include adaptiveValue('margin-top', -20, 10);
+    @media (max-width: em(630)) {
+      text-align: center;
+    }
+  }
+  &__number {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: var(--text-light-gray, #918299);
+    font-family: Vasek;
+    @include adaptiveValue('font-size', 33, 14);
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+  &__bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.filteraside {
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (max-width: em(550)) {
+    &__ul {
+      text-align: center;
+    }
+    position: absolute;
+    left: calc(-100% - 80px);
+    z-index: 1;
+    background: $bgColor;
+    width: calc(100% + 30px);
+    padding: 20px 40px;
+    top: -20px;
+    transition: left 0.3s ease;
+    box-shadow: 0px 50px 40px 0px rgba(59, 59, 74, 0.5);
+    &.active {
+      left: -15px;
+    }
+  }
+  &__title {
+    color: var(--text-black, #240532);
+    font-family: Winston;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 24px */
+  }
+  &__points {
+    & ul {
+      & li {
+        & button {
+          margin-left: 20px;
+          color: var(--text-gray, #665070);
+          font-family: Winston;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+          padding: 1px 6px;
+          border-radius: 5px;
+          &:active {
+            margin-bottom: rem(-1);
+            font-size: 19.8px;
+          }
+          &.selected {
+            background: $bgBright;
+          }
+        }
+      }
+    }
+  }
+}
+
+.filter {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: em(1400)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: em(1010)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+.filtercontent {
+  background: $bgColor;
+  &__top {
+    padding: 10px 0;
+    border-top: 1px solid #827089;
+    border-bottom: 1px solid #827089;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    & p {
+      color: var(--text-black, #240532);
+      text-transform: uppercase;
+      font-family: Winston;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 24px */
+    }
+  }
+  &__bottom {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    @media (max-width: em(550)) {
+      grid-template-columns: 1fr;
+    }
+    grid-column-gap: 20px;
+    &_load {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+  }
+}
+
+.fitlercard {
+  height: rem(395);
+  width: 365px;
+  margin: 0 auto;
+  @media (max-width: em(640)) {
+    height: rem(330);
+    width: rem(295);
+  }
+  position: relative;
+
+  &:hover {
+    & .fitlercard__top {
+      box-shadow: -10px 10px 40px 5px rgba(125, 125, 143, 0.25);
+      &_arrow {
+        transform: translate(0, 0);
+      }
+    }
+  }
+  &__top {
+    position: relative;
+    width: 365px;
+    height: 365px;
+    display: block;
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+    @media (max-width: em(640)) {
+      width: 295px;
+      height: 295px;
+    }
+    overflow: hidden;
+    &_bg {
+      position: absolute;
+      width: 365px;
+      height: 365px;
+      @media (max-width: em(640)) {
+        width: 295px;
+        height: 295px;
+      }
+    }
+    &_arrow {
+      position: absolute;
+      z-index: 1;
+      right: 10px;
+      top: 10px;
+      transform: translate(100%, -100%);
+      transition: transform 0.3s ease;
+    }
+  }
+  & p {
+    position: absolute;
+    bottom: 0;
+  }
+}

@@ -19,8 +19,8 @@ export const CardService = {
     return data;
   },
 
-  async getCardByOption(type, option) {
-    const { data } = await axios.get(`/makets/option?type=${type}&option=${option}`);
+  async getCardByOption(req) {
+    const { data } = await axios.get(`/makets/option${req}`);
     return data;
   },
 

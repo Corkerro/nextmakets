@@ -68,7 +68,7 @@ export default function Header() {
           <nav className="menu__body">
             <ul className="menu__list">
               <li className="menu__item">
-                <a href="" className="menu__link">
+                <a href="/filter" className="menu__link">
                   Макеты
                 </a>
               </li>

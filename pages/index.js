@@ -7,23 +7,30 @@ import Main from '@/components/MainPage/Main';
 import News from '@/components/MainPage/News';
 import Popular from '@/components/MainPage/Popular';
 import { CardService } from '@/services/card.service';
-import { NextPage } from 'next';
+import Head from 'next/head';
+import About from '@/components/MainPage/About';
 
 const Home = ({ cards }) => {
   return (
-    <div className="wrapper">
-      <Header />
-      <main className="page">
-        <Main />
-        {/* Pass the fetched cards data to the Popular component */}
-        <Popular cards={cards} />
-        <Category />
-        <News />
-        <Faq />
-        <Contacts />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>Макеты Figma</title>
+      </Head>
+      <div className="wrapper">
+        <Header />
+        <main className="page">
+          <Main />
+          <About />
+          {/* Pass the fetched cards data to the Popular component */}
+          <Popular cards={cards} />
+          <Category />
+          <News />
+          <Faq />
+          <Contacts />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

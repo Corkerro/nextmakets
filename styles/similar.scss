@@ -1,12 +1,26 @@
 .similar {
   @include adaptiveValue('padding-top', 110, 80);
-  &__container {
+  &__content {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
     @media (max-width: em(830)) {
       justify-content: center;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: rem(12);
+    & a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   &__card {

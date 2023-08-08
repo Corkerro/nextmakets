@@ -5,6 +5,7 @@ import Contacts from '@/components/Contacts';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { CardService } from '@/services/card.service';
+import Head from 'next/head';
 
 export default function MaketPage({ card, similar }) {
   const data = card.data[0];
@@ -12,32 +13,37 @@ export default function MaketPage({ card, similar }) {
 
   const addLike = (id) => CardService.incrementLike(id);
   return (
-    <div className="wrapper">
-      <Header />
-      <main className="page">
-        <Main
-          title={data.title}
-          images={JSON.parse(data.images)}
-          color={JSON.parse(data.color)}
-          type={data.type}
-          level={data.level}
-          adaptive={data.adaptive}
-          description={data.description}
-          link={data.link}
-        />
-        <About
-          features={features}
-          likes={data.likes}
-          id={data.id}
-          images={JSON.parse(data.images)}
-          link={data.link}
-          addLike={addLike}
-        />
-        <Similar similar={similar} />
-        <Contacts />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
+      <div className="wrapper">
+        <Header />
+        <main className="page">
+          <Main
+            title={data.title}
+            images={JSON.parse(data.images)}
+            color={JSON.parse(data.color)}
+            type={data.type}
+            level={data.level}
+            adaptive={data.adaptive}
+            description={data.description}
+            link={data.link}
+          />
+          <About
+            features={features}
+            likes={data.likes}
+            id={data.id}
+            images={JSON.parse(data.images)}
+            link={data.link}
+            addLike={addLike}
+          />
+          <Similar similar={similar} />
+          <Contacts />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
 
