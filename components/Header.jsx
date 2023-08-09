@@ -69,16 +69,11 @@ export default function Header() {
             <ul className="menu__list">
               <li className="menu__item">
                 <a href="/filter" className="menu__link">
-                  Макеты
+                  Больше макетов
                 </a>
               </li>
               <li className="menu__item">
-                <a href="" className="menu__link">
-                  Новости
-                </a>
-              </li>
-              <li className="menu__item">
-                <a href="" className="menu__link">
+                <a href="/contacts" className="menu__link">
                   Контакты
                 </a>
               </li>

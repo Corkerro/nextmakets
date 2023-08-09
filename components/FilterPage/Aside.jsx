@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Aside({ options, addQuery, isActive }) {
+  const router = useRouter();
+  const {
+    query: { color, level, type, adaptive, language },
+  } = router;
+
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
   const [selectedAdaptive, setSelectedAdaptive] = useState(null);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
-
   const [queryString, setQueryString] = useState('');
+
+  useEffect(() => {
+    setSelectedLevel(level || null);
+    setSelectedType(type || null);
+    setSelectedAdaptive(adaptive || null);
+    setSelectedLanguage(language || null);
+    setSelectedColor(color || null);
+  }, [color, level, type, adaptive, language]);
 
   addQuery(queryString);
 
@@ -18,28 +31,73 @@ export default function Aside({ options, addQuery, isActive }) {
     if (selectedAdaptive) params.push(`adaptive=${selectedAdaptive}`);
     if (selectedLanguage) params.push(`language=${selectedLanguage}`);
     if (selectedColor) params.push(`color=${selectedColor}`);
-
     setQueryString(params.length > 0 ? `?${params.join('&')}` : '');
   }, [selectedLevel, selectedType, selectedAdaptive, selectedLanguage, selectedColor]);
 
   const handleLevelClick = (level) => {
-    setSelectedLevel(level === selectedLevel ? null : level);
+    setSelectedLevel((prevLevel) => {
+      const newLevel = prevLevel === level ? null : level;
+      updateQueryString('level', newLevel);
+      return newLevel;
+    });
   };
 
   const handleTypeClick = (type) => {
-    setSelectedType(type === selectedType ? null : type);
+    setSelectedType((prevType) => {
+      const newType = prevType === type ? null : type;
+      updateQueryString('type', newType);
+      return newType;
+    });
   };
 
   const handleAdaptiveClick = (adaptive) => {
-    setSelectedAdaptive(adaptive === selectedAdaptive ? null : adaptive);
+    setSelectedAdaptive((prevAdaptive) => {
+      const newAdaptive = prevAdaptive === adaptive ? null : adaptive;
+      updateQueryString('adaptive', newAdaptive);
+      return newAdaptive;
+    });
   };
 
   const handleLanguageClick = (language) => {
-    setSelectedLanguage(language === selectedLanguage ? null : language);
+    setSelectedLanguage((prevLanguage) => {
+      const newLanguage = prevLanguage === language ? null : language;
+      updateQueryString('language', newLanguage);
+      return newLanguage;
+    });
   };
 
   const handleColorClick = (color) => {
-    setSelectedColor(color === selectedColor ? null : color);
+    setSelectedColor((prevColor) => {
+      const newColor = prevColor === color ? null : color;
+      updateQueryString('color', newColor);
+      return newColor;
+    });
+  };
+
+  const updateQueryString = (paramName, paramValue) => {
+    const params = {
+      ...(selectedLevel && { level: selectedLevel }),
+      ...(selectedType && { type: selectedType }),
+      ...(selectedAdaptive && { adaptive: selectedAdaptive }),
+      ...(selectedLanguage && { language: selectedLanguage }),
+      ...(selectedColor && { color: selectedColor }),
+    };
+
+    if (paramValue) {
+      params[paramName] = paramValue;
+    } else {
+      delete params[paramName];
+    }
+
+    const newParams = new URLSearchParams(params).toString();
+    setQueryString(newParams);
+    addQuery(newParams);
+
+    // Обновление URL
+    router.push({
+      pathname: router.pathname,
+      query: newParams,
+    });
   };
 
   return (
@@ -53,7 +111,7 @@ export default function Aside({ options, addQuery, isActive }) {
                 {options.levels.map((data) => (
                   <li key={data.level}>
                     <button
-                      className={selectedLevel === data.level ? 'selected' : ''}
+                      className={`${selectedLevel === data.level ? 'selected' : ''}`}
                       onClick={() => handleLevelClick(data.level)}>
                       {data.level}
                     </button>
@@ -127,7 +185,7 @@ export default function Aside({ options, addQuery, isActive }) {
                   <li key={data.color}>
                     {' '}
                     <button
-                      className={selectedColor === data.color ? 'selected' : ''}
+                      className={`${selectedColor === data.color ? 'selected' : ''}`}
                       onClick={() => handleColorClick(data.color)}>
                       {data.color}
                     </button>

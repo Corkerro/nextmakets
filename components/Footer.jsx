@@ -60,13 +60,7 @@ export default function Footer() {
         <div className="footer__content">
           <ul>
             <li className="li">
-              <a href="#">Privacy policy</a>
-            </li>
-            <li className="li">
-              <a href="#">Cookie policy</a>
-            </li>
-            <li className="li">
-              <a href="#">Legal notice</a>
+              <a href="/policy">Privacy policy</a>
             </li>
           </ul>
           <img src="../img/Design by Violetta Gobozova.svg" alt="" />

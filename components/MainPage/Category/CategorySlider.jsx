@@ -2,8 +2,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import SwiperNavButtons from './SwiperNavButtons';
+import { useRouter } from 'next/router';
 
 export default function CategorySlider() {
+  const router = useRouter();
+
+  const handleDivClick = (path) => {
+    router.push(`/filter?type=${path}`);
+  };
+
   return (
     <Swiper
       modules={[Navigation, Autoplay]} // Подключаем модули прямо в компонент Swiper
@@ -55,51 +62,51 @@ export default function CategorySlider() {
         },
       }}
       className="category__slider">
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('лендинг')}>
         <img src="/img/category/picture_1.jpg" alt="" />
-        <h4 className="subtitle">ОДНОСТРАНИЧНЫЕ</h4>
+        <h4 className="subtitle">ЛЕНДИНГ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('многостраничник')}>
         <img src="/img/category/picture_2.jpg" alt="" />
         <h4 className="subtitle">МНОГОСТРАНИЧНЫЕ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('магазин')}>
         <img src="/img/category/picture_3.jpg" alt="" />
         <h4 className="subtitle">МАГАЗИНЫ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('лендинг')}>
         <img src="/img/category/picture_1.jpg" alt="" />
-        <h4 className="subtitle">ОДНОСТРАНИЧНЫЕ</h4>
+        <h4 className="subtitle">ЛЕНДИНГ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('многостраничник')}>
         <img src="/img/category/picture_2.jpg" alt="" />
         <h4 className="subtitle">МНОГОСТРАНИЧНЫЕ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('магазин')}>
         <img src="/img/category/picture_3.jpg" alt="" />
         <h4 className="subtitle">МАГАЗИНЫ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('лендинг')}>
         <img src="/img/category/picture_1.jpg" alt="" />
-        <h4 className="subtitle">ОДНОСТРАНИЧНЫЕ</h4>
+        <h4 className="subtitle">ЛЕНДИНГ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('многостраничник')}>
         <img src="/img/category/picture_2.jpg" alt="" />
         <h4 className="subtitle">МНОГОСТРАНИЧНЫЕ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('магазин')}>
         <img src="/img/category/picture_3.jpg" alt="" />
         <h4 className="subtitle">МАГАЗИНЫ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('лендинг')}>
         <img src="/img/category/picture_1.jpg" alt="" />
-        <h4 className="subtitle">ОДНОСТРАНИЧНЫЕ</h4>
+        <h4 className="subtitle">ЛЕНДИНГ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('многостраничник')}>
         <img src="/img/category/picture_2.jpg" alt="" />
         <h4 className="subtitle">МНОГОСТРАНИЧНЫЕ</h4>
       </SwiperSlide>
-      <SwiperSlide className="category__slide">
+      <SwiperSlide className="category__slide" onClick={() => handleDivClick('магазин')}>
         <img src="/img/category/picture_3.jpg" alt="" />
         <h4 className="subtitle">МАГАЗИНЫ</h4>
       </SwiperSlide>
