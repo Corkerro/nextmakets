@@ -101,7 +101,7 @@ export default function Aside({ options, addQuery, isActive, toggle, isWindowSiz
   };
 
   return (
-    <aside className={`filterasid${isActive ? ' active' : ''}`}>
+    <aside className={`filteraside ${isActive ? 'active' : ''}`}>
       <ul className={`filteraside__ul`}>
         {isWindowSize550 ? (
           ''
