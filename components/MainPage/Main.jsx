@@ -104,18 +104,18 @@ export default function Main() {
         <div className="main__tags">
           <ul>
             <li>
-              <a href="#" className="subtitle-italic">
+              <a href="/filter?type=лендинг" className="subtitle-italic">
                 # лендинг
               </a>
             </li>
             <li>
-              <a href="#" className="subtitle-italic">
+              <a href="/filter?type=магазин" className="subtitle-italic">
                 # интернет-магазин
               </a>
             </li>
             <li>
-              <a href="#" className="subtitle-italic">
-                # корпоративный
+              <a href="/filter?type=приложение" className="subtitle-italic">
+                # приложение
               </a>
             </li>
           </ul>
