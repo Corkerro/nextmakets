@@ -132,7 +132,7 @@ export default function Filter({ cards, count, options }) {
                   toggle={toggleFilter}
                   options={options}
                   addQuery={setParams}
-                  isWindowSize550={isWindowSize550}
+                  isShown={isWindowSize550}
                 />
                 <div className="filtercontent__bottom_right">
                   <div className="filter__cards">

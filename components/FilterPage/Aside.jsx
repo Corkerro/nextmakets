@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-export default function Aside({ options, addQuery, isActive, toggle, isWindowSize550 }) {
+export default function Aside({ options, addQuery, isActive, toggle, isShown }) {
   const router = useRouter();
   const {
     query: { color, level, type, adaptive, language },
@@ -103,13 +103,9 @@ export default function Aside({ options, addQuery, isActive, toggle, isWindowSiz
   return (
     <aside className={`filteraside ${isActive ? 'active' : ''}`}>
       <ul className={`filteraside__ul`}>
-        {isWindowSize550 ? (
-          ''
-        ) : (
-          <button onClick={toggle} className="filteraside__button">
-            <img src="/img/filter/close.svg" alt="" />
-          </button>
-        )}
+        <button onClick={toggle} className={`filteraside__button`}>
+          <img src="/img/filter/close.svg" alt="" />
+        </button>
 
         <li>
           <ul>
