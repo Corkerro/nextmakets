@@ -121,8 +121,8 @@ export default function Filter({ cards, count, options }) {
           <div className="filtercontent">
             <div className="filtercontent__container">
               <div className="filtercontent__top">
-                <p ref={elementRef} onClick={toggleFilter}>
-                  Фильтр {isWindowSize550 ? '' : <img src="/img/filter/filter.svg" alt="" />}
+                <p className="ff" ref={elementRef} onClick={toggleFilter}>
+                  Фильтр <img src="/img/filter/filter.svg" alt="" />
                 </p>
                 <p>Макеты</p>
               </div>

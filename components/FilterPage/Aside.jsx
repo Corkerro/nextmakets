@@ -102,11 +102,10 @@ export default function Aside({ options, addQuery, isActive, toggle, isShown }) 
 
   return (
     <aside className={`filteraside ${isActive ? 'active' : ''}`}>
+      <div className="filteraside__top">
+        <img src="/img/filter/close.svg" alt="" onClick={toggle} />
+      </div>
       <ul className={`filteraside__ul`}>
-        <button onClick={toggle} className={`filteraside__button`}>
-          <img src="/img/filter/close.svg" alt="" />
-        </button>
-
         <li>
           <ul>
             <li className="filteraside__title">Сложность:</li>
