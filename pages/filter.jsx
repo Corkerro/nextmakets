@@ -1,5 +1,5 @@
 import { CardService } from '@/services/card.service';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,10 +12,40 @@ export default function Filter({ cards, count, options }) {
   const number = count.data[0].count;
   const [queryParams, setQueryParams] = useState('');
   const [isEmpty, setIsEmpty] = useState(false);
+  const [isFilterShow, setIsFilterShow] = useState(false);
   const [data, setData] = useState(cards.data);
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   const [isFilterActive, setIsFilterActive] = useState(false);
+  const [isWindowSize550, setWindowSize550] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = elementRef.current;
+      if (element) {
+        const rect = element.getBoundingClientRect();
+
+        setIsFilterShow(window.innerWidth < 550 && rect.top <= 30);
+      }
+    };
+
+    const handleResize = () => {
+      setWindowSize550(window.innerWidth >= 550);
+      handleScroll();
+      if (isWindowSize550) {
+        document.documentElement.classList.remove('lock');
+      }
+    };
+
+    handleResize(); // Вызываем функцию сразу для инициализации состояния ширины окна
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.addEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const fetchData = async (params, page) => {
     try {
@@ -55,7 +85,6 @@ export default function Filter({ cards, count, options }) {
     if (searchParams !== '') {
       setQueryParams(searchParams);
       fetchData(searchParams, currentPage);
-      const urlSearchParams = new URLSearchParams(searchParams);
     }
   }, []);
 
@@ -69,28 +98,42 @@ export default function Filter({ cards, count, options }) {
     }
   }, [queryParams, currentPage]);
 
+  const toggleFilter = () => {
+    if (!isWindowSize550) {
+      setIsFilterActive(!isFilterActive);
+      if (!isFilterActive) {
+        document.documentElement.classList.add('lock');
+      } else {
+        document.documentElement.classList.remove('lock');
+      }
+    }
+  };
+
   return (
     <>
       <Head>
         <title>Фильтр</title>
       </Head>
       <div className="wrapper">
-        <Header />
+        <Header isFilterActive={isFilterActive} toggle={toggleFilter} isFilter={isFilterShow} />
         <main className="page">
           <Top number={number} />
           <div className="filtercontent">
             <div className="filtercontent__container">
               <div className="filtercontent__top">
-                <p onClick={() => setIsFilterActive(!isFilterActive)}>Фильтр </p>
-                <p
-                  onClick={() => {
-                    setIsFilterActive(false);
-                  }}>
-                  Макеты{' '}
+                <p ref={elementRef} onClick={toggleFilter}>
+                  Фильтр {isWindowSize550 ? '' : <img src="/img/filter/filter.svg" alt="" />}
                 </p>
+                <p>Макеты</p>
               </div>
               <div className="filtercontent__bottom">
-                <Aside isActive={isFilterActive} options={options} addQuery={setParams} />
+                <Aside
+                  isActive={isFilterActive}
+                  toggle={toggleFilter}
+                  options={options}
+                  addQuery={setParams}
+                  isWindowSize550={isWindowSize550}
+                />
                 <div className="filtercontent__bottom_right">
                   <div className="filter__cards">
                     {isEmpty ? (

@@ -50,6 +50,7 @@
       position: absolute;
       bottom: -100%;
       transition: bottom 0.3s ease;
+      transition-delay: 0.15s;
       background: linear-gradient(180deg, rgba(223, 223, 241, 0) 0%, #dfdff1 88.02%);
       &.mobile {
         bottom: 0;

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-export default function Header() {
+export default function Header({ isFilter, toggle, isFilterActive }) {
   const [scrolled, setScrolled] = useState(false);
   const [isWindowSize700, setWindowSize700] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -48,7 +48,10 @@ export default function Header() {
   }, []);
 
   const href = (
-    <a data-da=".menu__list,700" href="#" className="text-1 header__href">
+    <a
+      data-da=".menu__list,700"
+      href="https://t.me/+UwcYLLHHQiRhNzFi"
+      className="text-1 header__href">
       @figmamakets
     </a>
   );
@@ -58,6 +61,17 @@ export default function Header() {
         <a href={`/`} className="header__logo">
           <Image src="/img/logo.svg" alt="" width={26} height={40} />
         </a>
+        {isFilter ? (
+          <button className="_fitler-button" onClick={toggle}>
+            Фильтр{' '}
+            <div>
+              <img className={isFilterActive ? 'hidden' : ''} src="/img/filter/filter.svg" alt="" />
+              <img className={!isFilterActive ? 'hidden' : ''} src="/img/filter/close.svg" alt="" />
+            </div>
+          </button>
+        ) : (
+          ''
+        )}
         <div className="header__menu menu">
           <button
             type="button"

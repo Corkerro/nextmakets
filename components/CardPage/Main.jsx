@@ -24,7 +24,7 @@ export default function Main({ color, description, title, images, type, level, a
               <React.Fragment key={index}>
                 {index > 0}
                 <li className="subtitle-italic">
-                  <a href={`#${item}`}># {item}</a>
+                  <a href={`/filter?type=${item}`}># {item}</a>
                 </li>
               </React.Fragment>
             ))}
@@ -32,15 +32,15 @@ export default function Main({ color, description, title, images, type, level, a
               <React.Fragment key={index}>
                 {index > 0}
                 <li className="subtitle-italic">
-                  <a href={`#${item}`}># {item}</a>
+                  <a href={`/filter?color=${item}`}># {item}</a>
                 </li>
               </React.Fragment>
             ))}
             <li className="subtitle-italic">
-              <a href={level}># {level}</a>
+              <a href={`/filter?level=${level}`}># {level}</a>
             </li>
             <li className="subtitle-italic">
-              <a href={adaptive}># {adaptive}</a>
+              <a href={`/filter?adaptive=${adaptive}`}># {adaptive}</a>
             </li>
           </ul>
           <p>{description}</p>

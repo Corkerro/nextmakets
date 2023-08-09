@@ -145,7 +145,9 @@ body {
 
 // Подключение стилей общих элементов проекта
 @import 'common';
-
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 // Подключение стилей отдельных блоков
 @import 'header';
 @import 'footer';
