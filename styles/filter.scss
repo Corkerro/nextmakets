@@ -60,6 +60,9 @@
       margin-top: rem(-40);
     }
     &__button {
+      @media (min-width: em(550.1)) {
+        display: none;
+      }
       position: sticky;
       top: 0;
       display: flex;
